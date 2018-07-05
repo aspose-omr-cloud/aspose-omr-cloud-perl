@@ -17,31 +17,6 @@ Method | HTTP request | Description
 
 Run specific OMR task
 
-### Example 
-```perl
-use Data::Dumper;
-use asposeomrcloud::OmrApi;
-
-# You can acquire App SID and App Key by registrating at Aspose Cloud Dashboard https://dashboard.aspose.cloud
-my $APP_KEY = 'xxxxx'
-my $APP_SID = 'xxxxx'
-
-my $api_instance = asposeomrcloud::OmrApi->new($APP_KEY, $APP_SID, 'https://api.aspose.cloud/v1.1');
-
-my $name = 'name_example'; # string | Name of the file to recognize.
-my $action_name = 'action_name_example'; # string | Action name ['CorrectTemplate', 'FinalizeTemplate', 'RecognizeImage']
-my $param = asposeomrcloud::Object::OMRFunctionParam->new(); # OMRFunctionParam | Function params, specific for each actionName
-my $storage = 'storage_example'; # string | Image's storage.
-my $folder = 'folder_example'; # string | Image's folder.
-
-eval { 
-    my $result = $api_instance->post_run_omr_task(name => $name, action_name => $action_name, param => $param, storage => $storage, folder => $folder);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling OmrApi->post_run_omr_task: $@\n";
-}
-```
 
 ### Parameters
 
